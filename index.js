@@ -32,8 +32,6 @@ mongoose
   .connect("mongodb+srv://vaishnavi0710:E0YD6kMkhqMsRCtv@internbridge.pjzpiuh.mongodb.net/interndb", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
   })
   .then(() => console.log("Connected to DB"))
   .catch((err) => console.log(err));
