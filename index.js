@@ -14,7 +14,7 @@ const server = http.createServer(app);
 console.log(__dirname);
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:3000", // Your frontend URL
+    origin:process.env.REACT_APP_SERVER_URL || "http://localhost:3000", // Your frontend URL
     methods: ["GET", "POST"],
   },
 });
@@ -29,7 +29,7 @@ io.on("connection", (socket) => {
 
 // MongoDB connection
 mongoose
-  .connect("mongodb+srv://sawantsvaishnavi7:chinu@internbridge.flcjhqo.mongodb.net/internbridgedb", {
+  .connect(""mongodb+srv://vaishnavi0710:E0YD6kMkhqMsRCtv@internbridge.pjzpiuh.mongodb.net/interndb"", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
