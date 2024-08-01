@@ -29,7 +29,7 @@ io.on("connection", (socket) => {
 
 // MongoDB connection
 mongoose
-  .connect("mongodb+srv://sawantsvaishnavi7:chinu@internbridge.flcjhqo.mongodb.net/?retryWrites=true&w=majority&appName=internbridge", {
+  .connect("mongodb+srv://sawantsvaishnavi7:chinu@internbridge.flcjhqo.mongodb.net/internbridgedb", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
