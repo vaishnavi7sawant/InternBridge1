@@ -53,16 +53,26 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   calendarIcon: {
-    position: "fixed", // Use fixed positioning
-    top: theme.spacing(55), // Space from the bottom
-    left: theme.spacing(40), // Space from the right
-    zIndex: 1000,
-    backgroundColor: "white",
-    color: "#3f51b5",
-    width: "80px", // Button width
-    height: "80px",
+    position: "fixed", // Ensure fixed positioning
+    top: theme.spacing(2.5), // 20px equivalent
+    left: theme.spacing(85), // Direct pixel value for debugging
+    backgroundColor: "blue", // Primary color
+    color: "blue",
+    border: "none",
+    // Circular shape
+    width: "60px",
+    height: "60px",
+    display: "flex",
+    alignitems: "center",
+    justifycontent: "center",
+    fontSize: "24px",
+    cursor: "pointer",
     boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
-    // Ensure it's above other elements
+    transition: "background-color 0.3s",
+
+    "&:hover": {
+      backgroundColor: "#1976d2", // Darker shade on hover
+    },
   },
 }));
 
@@ -199,6 +209,11 @@ const JobTile = (props) => {
 
 const FilterPopup = (props) => {
   const classes = useStyles();
+  const history = useHistory();
+
+  const handleCalendarClick = () => {
+    history.push("/calender"); // Replace with the actual route to your calendar component
+  };
   const { open, handleClose, searchOptions, setSearchOptions, getData } = props;
   return (
     <Modal open={open} onClose={handleClose} className={classes.popupDialog}>
@@ -653,6 +668,12 @@ const Home = (props) => {
         alignItems="center"
         style={{ padding: "30px", minHeight: "93vh" }}
       >
+        <IconButton
+          className={classes.calendarIcon}
+          onClick={handleCalendarClick}
+        >
+          <EventIcon fontSize="large" />
+        </IconButton>
         <Grid
           item
           container
@@ -663,6 +684,7 @@ const Home = (props) => {
           <Grid item xs>
             <Typography variant="h2"></Typography>
           </Grid>
+
           <Grid item xs>
             <TextField
               label="Search Internships"
@@ -696,12 +718,6 @@ const Home = (props) => {
               <FilterListIcon />
             </IconButton>
           </Grid>
-          <IconButton
-            className={classes.calendarIcon}
-            onClick={handleCalendarClick}
-          >
-            <EventIcon fontSize="large" />
-          </IconButton>
         </Grid>
 
         <Grid
