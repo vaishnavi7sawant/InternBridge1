@@ -29,7 +29,7 @@ io.on("connection", (socket) => {
 
 // MongoDB connection
 mongoose
-  .connect(""mongodb+srv://vaishnavi0710:E0YD6kMkhqMsRCtv@internbridge.pjzpiuh.mongodb.net/interndb"", {
+  .connect("mongodb+srv://vaishnavi0710:E0YD6kMkhqMsRCtv@internbridge.pjzpiuh.mongodb.net/interndb", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
