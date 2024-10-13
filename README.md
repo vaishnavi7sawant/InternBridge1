@@ -17,10 +17,6 @@ InternBridge is a platform that facilitates internships by connecting students a
 
 - **Other Tools: CORS, Body-Parser, File System (for file uploads)**
 
-- **Project Setup**
-
-- **Prerequisites**
-
 - **Node.js (v14.6+)**
 
 - **MongoDB (Atlas or local installation)**
